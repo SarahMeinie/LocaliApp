@@ -11,7 +11,7 @@ specific group), and commenting on, or ’liking’ posts. Posts are geo-tagged,
 and all interactions have timestamps. Users can also create groups which
 have admins. These groups are fully sovereign i.e. groups run themselves.
 <br /> 
-
+---
 ---
 
 ## Usage
