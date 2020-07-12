@@ -3,7 +3,7 @@
 
 # Locali
 
-![alt text](https://imgur.com/borCmZi.png| width=100)
+![alt text](https://imgur.com/borCmZi.png | width=100)
 
 <src="https://imgur.com/borCmZi.png" width="150">
 Locali (pronounced “Locally”) is a web-based social network, that is focused
