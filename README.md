@@ -1,6 +1,6 @@
 # Locali
 
-![Imgur Image](https://imgur.com/a/dx63sr8.jpg)
+![Imgur Image](https://imgur.com/a/dx63sr8)
 
 Locali (pronounced “Locally”) is a web-based social network, that is focused
 on users interacting with one another on geo-tagged posts. Users are able to
