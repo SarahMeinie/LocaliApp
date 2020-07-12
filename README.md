@@ -4,7 +4,7 @@
 # Locali
 
 <img align="left" src="https://imgur.com/borCmZi.png" width="150">
-
+<br /> 
 Locali (pronounced “Locally”) is a web-based social network, that is focused
 on users interacting with one another on geo-tagged posts. Users are able to
 interact with one another through viewing posts (posted to the main feed or a
