@@ -2,6 +2,9 @@
 
 
 # Locali
+![](https://imgur.com/borCmZi.png| width=100)
+
+
 ![alt text](https://imgur.com/borCmZi.png)
 
 <src="https://imgur.com/borCmZi.png" width="150">
