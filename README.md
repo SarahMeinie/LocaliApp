@@ -17,7 +17,7 @@ have admins. These groups are fully sovereign i.e. groups run themselves.
 
 ## Usage
 
-Each folder, Locali_API and Locali_FrontEnd have their own relevant README documentation on installation and usage.
+Both Locali_API and Locali_FrontEnd have their own relevant README documentation on installation and usage.
 
 
 ## Submission Resources
