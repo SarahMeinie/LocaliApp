@@ -1,4 +1,4 @@
-Our backend API is running on our Ubuntu Server in the cloud, however shoukd you wish to recreate our server and run our code follow the steps below:
+Our backend API is running on our Ubuntu Server in the cloud, however should you wish to recreate our server and run our code follow the steps below:
 
 ## Installing requirements and creating the virtual environment
 
