@@ -1,0 +1,76 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-buttons slot="end">
+      <ion-button (click)="editGroup()">
+        <ion-label>Edit</ion-label>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-row style="--margin-bottom: 0px;">
+      <ion-col style="padding-top: 10px; padding-left: 20px;">
+        <ion-row>
+          <div class="ion-text-center">
+            <h1>
+              {{ groupName }}
+            </h1>
+          </div>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-buttons>
+              <ion-button style="height: auto;">
+                <ion-label>
+                <h2>{{ members }}</h2>
+                <p>Members</p>
+              </ion-label>                
+              </ion-button>
+            </ion-buttons>
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <ion-buttons>
+              <ion-button style="height: auto; justify-content: right;">
+                <ion-label>
+                <h2>{{ postCount }}</h2>
+                <p>Posts</p>
+              </ion-label>                
+              </ion-button>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col></ion-col>
+          <ion-col>
+            <ion-button size="small" expand="block">Join</ion-button>
+          </ion-col>
+          <ion-col></ion-col>
+        </ion-row>        
+      </ion-col>
+      
+    </ion-row>
+  </ion-toolbar>
+
+
+  <!--
+  <ion-list id="list"></ion-list>
+
+  <ion-infinite-scroll threshold="100px" id="infinite-scroll">
+    <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+-->
+  <ng-template #postContainer>
+                
+  </ng-template>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles"
+                                 loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

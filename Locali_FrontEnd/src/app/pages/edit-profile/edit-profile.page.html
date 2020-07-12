@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title align="center" (click)="goHome()">
+            <img height="30" src="../assets/locali.png">
+        </ion-title>
+        <ion-buttons slot="end">
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-avatar class="avatar"><img src="../../assets/avatar-icon.png" alt=""></ion-avatar>
+  <ion-item lines="full" class="line">
+  <ion-input required="true" required type="text" value="{{userName}}"></ion-input>
+  </ion-item>
+  <h2 class="Posts">Posts</h2>
+  <h3 class="Followers">Followers</h3>
+  <h4 class="Following">Following</h4>
+  <h5 class="Description">DESCRIPTION : </h5>
+  <ion-textarea disabled="false" autoGrow="true" class="DescriptionText" value="{{userDescription}}"></ion-textarea>
+  <ion-button class="EditProfile" (click)="confirm()">Confirm</ion-button>
+  <ion-grid class="PostsSection">
+  <p>List of posts</p>
+</ion-grid>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "Locali_App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

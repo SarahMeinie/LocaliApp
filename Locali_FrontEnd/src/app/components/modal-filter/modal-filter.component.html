@@ -1,0 +1,73 @@
+<ion-content>
+  <ion-item lines="none">
+    <ion-list>
+      <ion-label style="padding-top: 10px;">
+        <p style="font-size: small; padding: 0; margin-bottom: 0;">Sort By</p>
+      </ion-label>
+
+      <ion-item lines="none">
+        <ion-button shape="round" [fill]="nearestfill" size="small" (click)="toggleSort('Nearest')">Nearest</ion-button>
+        <ion-button shape="round" [fill]="newestfill" size="small" (click)="toggleSort('Newest')">Newest</ion-button>
+      </ion-item>
+
+    </ion-list>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-list>
+
+      <ion-label>
+        <p style="font-size: small;">Within</p>
+      </ion-label>
+
+      <ion-item lines="none">
+     
+        <ion-button shape="round" [fill]="fill2" size="small" (click)="toggleDistance(2)">2 km</ion-button>
+        <ion-button shape="round" [fill]="fill5" size="small" (click)="toggleDistance(5)">5 km</ion-button>
+        <ion-button shape="round" [fill]="fill10" size="small" (click)="toggleDistance(10)">10 km</ion-button>
+        <ion-button shape="round" [fill]="fillinf" size="small" (click)="toggleDistance(null)">∞</ion-button>
+      </ion-item>
+
+    </ion-list>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-list>
+
+      <ion-label>
+        <p style="font-size: small;">Categories</p>
+      </ion-label>
+
+      <ion-item lines="none">
+        <ion-button shape="round" fill="outline" size="small" (click)="selectCategories()">Select categories</ion-button>
+      </ion-item>
+
+    </ion-list>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-list>
+
+      <ion-label>
+        <p style="font-size: small;">User</p>
+      </ion-label>
+
+      <ion-item lines="none">
+        <ion-button *ngIf="filters.user === ''" shape="round" fill="outline" size="small">Select user</ion-button>
+      </ion-item>
+
+    </ion-list>
+  </ion-item>
+
+  <ion-toolbar>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="medium" fill="outline" shape="round" size="small" (click)="reset()">Reset</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" color="danger" shape="round" size="small" (click)="apply()">Apply</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-toolbar>
+</ion-content>

@@ -1,0 +1,6 @@
+{% autoescape off %}
+{% csrf_token %}
+Hi {{ user.username }}
+Please click on the following link to confirm your Locali registration:
+https://{{ domain }}/api/account/activate/{{ uid }}/{{ token }}
+{% endautoescape %}

@@ -1,0 +1,24 @@
+{
+    "items": [
+        {
+            "tag": "Time",
+            "note": "May, 2020"
+        },
+        {
+            "tag": "Distance",
+            "note": "5km"
+        },
+        {
+            "tag": "Categories",
+            "note": "All"
+        },
+        {
+            "tag": "Users",
+            "note": "All"
+        },
+        {
+            "tag": "Groups",
+            "note": "All"
+        }
+    ]
+}

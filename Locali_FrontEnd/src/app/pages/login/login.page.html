@@ -1,0 +1,33 @@
+<ion-header translucent>
+  <ion-toolbar>
+      <ion-back-button slot="start" [text]="backbuttontext"></ion-back-button>
+    <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form (submit)="doLogin()">
+    <ion-item lines="full">
+      <ion-label position="floating">{{ 'USERNAME' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="account.username" name="username" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">{{ 'PASSWORD' | translate }}</ion-label>
+      <ion-input type="password" [(ngModel)]="account.password" name="password" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col style="padding: 10px;">
+        <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>
+      </ion-col>
+    </ion-row>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit">{{ 'LOGIN_BUTTON' | translate }}</ion-button>
+    </div>
+    
+  </form>
+
+
+</ion-content>

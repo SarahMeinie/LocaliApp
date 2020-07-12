@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-buttons slot="end">
+      <ion-button (click)="editGroup()">
+        <ion-label>Submit</ion-label>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="full">
+    <ion-input type="text" [(ngModel)]="groupName"></ion-input>
+  </ion-item>
+  <ion-row style="justify-content: space-evenly; padding-top: 15px;">
+      <ion-buttons>
+        <ion-button color = "danger" class = "choice-buttons" 
+          [fill]="delete ? 'solid' : 'outline'" (click)="confirmDel()"
+          id = "butDelete">
+          Delete
+        </ion-button>
+      </ion-buttons>
+    
+      <ion-buttons>
+        <ion-button color = "warning" class = "choice-buttons" 
+        [fill]="leave ? 'solid' : 'outline'" (click)="confirmLeave()"
+        id = "butLeave">
+          Leave
+        </ion-button>
+      </ion-buttons>
+  </ion-row>
+</ion-content>

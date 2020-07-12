@@ -1,0 +1,25 @@
+
+<ion-content>
+  <div class="splash-intro">
+    {{ 'WELCOME_INTRO' | translate }}
+  </div>
+  <div class="splash-locali"></div>
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+  </div>
+  
+  <div class="ion-padding">
+    <ion-row style="margin-top: auto;">
+      <ion-col>
+        <ion-button class="sign-up" routerLink="/register" expand="block">{{ 'SIGNUP' | translate }}</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button class="sign-in" routerLink="/login" expand="block">{{ 'LOGIN' | translate }}</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

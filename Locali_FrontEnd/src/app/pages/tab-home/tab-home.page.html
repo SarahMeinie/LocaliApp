@@ -1,0 +1,139 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button slot="icon-only" (click)="menuOpen('first')">
+                <ion-icon color="medium" name="search-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title align="center">
+            <img height="30" src="../assets/img/locali/locali-primary.png">
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="menuOpen('end')">
+                <ion-icon color="medium" name="people-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button color="medium" fill="outline" shape="round" (click)="presentModal()">
+            <ion-icon size="small" name="options"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+        <ion-button colour="medium" fill="solid" shape="round" size="small" (click)="toggleView()">
+            <ion-icon *ngIf="altview === 'List'" class="chipicon" size="small" name="list-outline"></ion-icon>
+            <ion-icon *ngIf="altview === 'Map'" class="chipicon" size="small" name="map-outline"></ion-icon>
+            <ion-label>
+                <p class="chiptext">{{ altview }}</p>
+            </ion-label>
+        </ion-button>
+    </ion-buttons>
+</ion-toolbar>
+
+
+<ion-content>
+        <ion-text *ngIf="view === 'Map'">Hello World!</ion-text>       
+
+        <ion-list *ngIf="view === 'List'">
+            <ion-button (click)="toggleInfiniteScroll()" expand="block">
+                Toggle Infinite Scroll
+            </ion-button>
+            <ng-template #postContainer>
+                
+            </ng-template>
+            <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+                <ion-infinite-scroll-content loadingSpinner="bubbles"
+                                             loadingText="Loading more data...">
+                </ion-infinite-scroll-content>
+            </ion-infinite-scroll>
+        </ion-list> 
+</ion-content>
+
+<ion-menu side="start" type="overlay" menuId="first" contentId="main">
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title class="center">{{ 'SEARCH_TITLE' | translate }}</ion-title>
+            <ion-buttons slot="end">
+                <ion-button (click)="menuClose()">
+                    <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+                </ion-button>
+        </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-header>
+            <ion-searchbar></ion-searchbar>
+            <ion-segment [(ngModel)]="search" (ionChange)="segmentChanged($event)">
+                <ion-segment-button value="users-segment">
+                    <ion-label>{{ 'SEGMENT_USERS' | translate }}</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="groups-segment">
+                    <ion-label>{{ 'SEGMENT_GROUPS' | translate }}</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+        
+        </ion-header>
+        <div [ngSwitch]="search">
+            <ion-list>
+                <ion-text *ngSwitchCase="'users-segment'">
+                    show users
+                </ion-text>                        
+            </ion-list>                   
+  
+            <ion-list *ngSwitchCase="'groups-segment'">
+                <ion-text>
+                    show groups
+                </ion-text>
+            </ion-list>
+        </div>    
+    </ion-content>
+    
+  </ion-menu>
+  
+
+
+<ion-menu side="end" type="overlay" menuID="end" contentId="main">
+    <ion-header>
+        <ion-toolbar color="danger">
+            <ion-title class="long-title">{{ 'GROUP_TITLE' | translate }}</ion-title>
+            <ion-buttons slot="end">
+                <ion-button (click)="menuClose()">
+                    <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+                </ion-button>
+        </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+   
+    <ion-content>
+
+        <ion-item>
+            <ion-buttons>
+                <ion-button>
+                    <ion-icon name="add-outline" color="secondary" size="small" slot="icon-only"></ion-icon>
+                    <ion-label color="secondary">{{ 'NEW_GROUP_TEXT' | translate }}</ion-label>
+                </ion-button>
+            </ion-buttons>       
+        </ion-item>
+
+        <ion-list *ngIf="groupsLoaded, else elseBlock">
+            <ion-list-header>{{ 'MEMBER' | translate }}</ion-list-header>
+            <ion-item *ngFor="let group of groups, let i = index" button (click)="goToGroup(i)">
+                <ion-thumbnail slot="start">
+                    <img src= "../../../assets/img/default/group-avatar.png">
+               </ion-thumbnail>
+                <ion-label>{{ group['name'] }}</ion-label>
+            </ion-item>
+        </ion-list>
+        <ng-template #elseBlack>
+            <ion-spinner></ion-spinner>
+        </ng-template>
+        
+
+    </ion-content>
+</ion-menu>
+
+<ion-router id="main" main></ion-router>

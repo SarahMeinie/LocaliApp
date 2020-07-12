@@ -1,0 +1,65 @@
+<ion-content>
+  <ion-toolbar>
+    <ion-list-header>Filter by</ion-list-header>
+    <ion-buttons slot="end">
+      <ion-button (click)="automaticClose = !automaticClose">
+        <ion-icon slot="icon-only" name="close" *ngIf="automaticClose"></ion-icon>
+        <ion-icon slot="icon-only" name="resize" *ngIf="!automaticClose"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-list>
+    <div *ngFor="let item of popoverContent; let i = index;" class="accordion-list" detail="false">
+      <ion-item tappable (click)="toggleFilterItem(i)" [ngClass]="{'section-active': item.open}" lines="full">
+
+        <ion-icon class="toggle" slot="start" size="small" name="chevron-forward-outline" *ngIf="!item.open"></ion-icon>
+        <ion-icon class="toggle" slot="start" size="small" name="chevron-down-outline" *ngIf="item.open"></ion-icon>
+
+        <ion-label>{{ item.tag }}</ion-label>
+        <ion-note style="font-size: small;" *ngIf="!item.open">{{ item.note }}</ion-note>
+      </ion-item>
+
+      <div *ngIf="item.open">
+        <div [ngSwitch]="item.tag">
+          <ion-datetime *ngSwitchCase="'Time'" displayFormat="MMM, YYYY" placeholder="Pick a month and year"
+            [min]="mintime" [max]="maxtime">
+          </ion-datetime>
+
+          <ion-range *ngSwitchCase="'Distance'" value="5" min="1" max="15" step="1" pin>
+            <ion-icon size="small" slot="start" name="location-outline"></ion-icon>
+            <ion-icon slot="end" name="location-outline"></ion-icon>
+          </ion-range>
+
+          <div *ngSwitchCase="'Categories'">
+            <ion-button fill="clear" size="small" expand="block">
+              <ion-label><u>Select categories</u></ion-label>
+            </ion-button>
+            <ion-label size="x-small" color="medium">Showing results for all categories</ion-label>
+          </div>
+
+          <div *ngSwitchCase="'Users'">
+            <ion-button fill="clear" size="small" expand="block">
+              <ion-label><u>Select users</u></ion-label>
+            </ion-button>
+            <ion-label size="x-small" color="medium">Showing results for all users</ion-label>
+          </div>
+
+          <div *ngSwitchCase="'Groups'">
+            <ion-button fill="clear" size="small" expand="block">
+              <ion-label><u>Select groups</u></ion-label>
+            </ion-button>
+            <ion-label size="x-small" color="medium">Showing results for all groups</ion-label>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+    <ion-item lines="none" detail="false" button (click)="dismissPopover()">
+      <ion-label color="danger">Reset</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

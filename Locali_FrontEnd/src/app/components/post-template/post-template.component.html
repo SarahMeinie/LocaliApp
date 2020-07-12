@@ -1,0 +1,48 @@
+<ion-card>
+  <ion-item lines="full" (click)="visitUser()">
+    <ion-avatar slot="start">
+      <img src="{{ data['avatar'] }}">
+    </ion-avatar>
+    <ion-label>
+      <h3>{{ data['username'] }}</h3>
+      <p>{{ data['date'] | date:'MMM d, y, h:mm a'}}</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-button *ngFor="let category of data['categories'], let i = index" class = "categoryLabel" color="primary" disabled>
+      {{ category }}
+    </ion-button>
+  </ion-item>
+
+  <ion-item lines="full">
+    <ion-row>
+      <ion-col>
+        <p class = "bodyText">{{ data['body'] }}</p>
+        
+        <ion-button fill="clear" size="small" style="--padding-start: 0; --border-width: 0;">
+          <ion-icon slot="start" name="pin"></ion-icon>
+          <p>{{ data['address'] }}</p>
+        </ion-button>
+  
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+    <ion-row>
+      <ion-col center text-center>
+        <ion-button fill="clear" size="small" (click)="postLike()">
+          <ion-icon slot="start" name="thumbs-up-outline" 
+                          ngDefaultControl [color]="data['liked'] ? 'primary' : 'medium'"
+                          [name]="data['liked'] ? 'thumbs-up' : 'thumbs-up-outline'">
+          </ion-icon>
+          <ion-label>{{ data['likes'] }}</ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-button fill="clear" size="small" (click)="visitPost()">
+          <ion-label>{{ data['comments'] }} comments</ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+</ion-card>

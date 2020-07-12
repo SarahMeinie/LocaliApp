@@ -1,0 +1,25 @@
+<ion-tabs>
+    <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="tab-map">
+            <ion-icon name="earth-outline" size="medium"></ion-icon>
+        </ion-tab-button>
+        
+        <ion-tab-button tab="tab-home">
+            <ion-icon name="list-circle-outline" size="medium"></ion-icon>
+        </ion-tab-button>
+
+        <ion-tab-button></ion-tab-button>
+        <ion-tab-button></ion-tab-button>
+
+        <ion-tab-button tab="tab-profile">
+            <img class="avatar" src="../../../assets/img/default/avatar.png" width="30">
+        </ion-tab-button>
+    </ion-tab-bar>
+
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button (click)="presentModal()">
+            <ion-icon name="add-outline"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-tabs>

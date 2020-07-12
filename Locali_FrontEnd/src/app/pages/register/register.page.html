@@ -1,0 +1,41 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="backbuttontext"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'SIGNUP_TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form (submit)="doSignup()">
+    <ion-item lines="full">
+      <ion-label position="floating">{{ 'USERNAME' | translate }}<ion-text color="danger"> *</ion-text></ion-label>
+      <ion-input type="text" [(ngModel)]="account.username" name="username" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">{{ 'FIRSTNAME' | translate }}</ion-label>
+      <ion-input type="email" name="name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">{{ 'LASTNAME' | translate }}</ion-label>
+      <ion-input type="email" name="name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">{{ 'EMAIL' | translate }}<ion-text color="danger"> *</ion-text></ion-label>
+      <ion-input type="email" [(ngModel)]="account.email" name="email" required></ion-input>
+    </ion-item>    
+
+    <ion-item lines="full">
+      <ion-label position="floating">{{ 'PASSWORD' | translate }}<ion-text color="danger"> *</ion-text></ion-label>
+      <ion-input type="password" [(ngModel)]="account.password" name="password" required></ion-input>
+    </ion-item>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit">{{ 'SIGNUP_BUTTON' | translate }}</ion-button>
+    </div>
+  </form>
+</ion-content>

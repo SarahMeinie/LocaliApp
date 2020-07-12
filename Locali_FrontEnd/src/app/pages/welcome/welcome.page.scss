@@ -1,0 +1,63 @@
+
+.splash-intro {
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color:  white;
+    z-index: 2;
+    max-width: 80%;
+    margin: auto;
+    padding-top: 60px;
+  }
+    
+  .splash-locali {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    margin-top: 0px;
+    background: url('../../../assets/img/locali/locali-light.png') transparent;
+    background-size: 100%;
+    z-index: 2;
+    height: 65px;
+    width: 179px;
+  }
+    
+  .splash-bg {
+    position: relative;
+    background: url('../../../assets/img/splash/splashbg.png') no-repeat transparent;
+    background-size: cover;
+    height: 50%;
+    z-index: 1;
+    margin-top: -150px;
+    background-repeat: repeat-x;
+    animation: animatedBackground 40s linear infinite;
+  }
+    
+  @keyframes animatedBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+  }
+  
+  .splash-info {
+    position: relative;
+    z-index: 2;
+    margin-top: -64px;
+    text-align: center;
+  }
+  
+  .splash-logo {
+    margin: auto;
+    background: url('../../../assets/img/icon/icon-welcome.png') repeat transparent;
+    background-size: 100%;
+    width: 128px;
+    height: 128px;
+  }
+    
+  .sign-up {
+    --background: #4d8b55;
+  }
+  
+  .sign-in {
+    --background: #75ca80;
+  }

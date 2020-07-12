@@ -1,0 +1,119 @@
+<ion-header>
+    <ion-toolbar color="primary">
+
+        <ion-buttons slot="start">
+            <ion-button (click)="goHome()">
+              <ion-icon name="arrow-undo-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title align="center" (click)="goHome()">
+            <img height="30" src="../../../assets/img/locali/locali-light.png">
+        </ion-title>
+
+        <ion-buttons slot="end">
+            <ion-button>
+            </ion-button>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="{{avatar}}"> <br/>
+   <ion-icon *ngIf="editMode" size="large" name="chevron-up-circle-outline" (click)="fileInput.click()"></ion-icon>
+  <input style="display: none"
+         type="file"
+         accept="image/*"
+         (change)="onSelectFile($event)"
+         #fileInput>
+
+    <div *ngIf="editMode; else viewMode">
+      <ion-button class="button" (click)="profileMode();confirm()">confirm</ion-button>
+      <ion-input (keyup)="updateUsername($event)" class="Username" placeholder={{user.username}} ></ion-input>
+     </div>
+     <ng-template #viewMode>
+      <ion-button class="button" (click)="profileMode()">Edit Profile</ion-button>
+      <h1 class="Username">{{user.username}} </h1>
+    </ng-template>
+    <ion-button class="button" (click)="presentAlert()">Delete Account</ion-button>
+  <ion-row><ion-col>
+  <ion-label class="header">Date Joined :</ion-label></ion-col>
+  <ion-col><ion-label></ion-label>{{user.date_joined}}</ion-col>
+</ion-row>
+
+<ion-row><ion-col>
+  <ion-label class="header">Email :</ion-label></ion-col>
+    <ion-col><ion-label>{{user.email}}</ion-label></ion-col>
+  </ion-row>
+  <div *ngIf="!editMode">
+  <ion-row><ion-col>
+  <ion-label class="header">First Name :</ion-label></ion-col>
+    <ion-col><ion-label>{{user.first_name}}</ion-label></ion-col>
+  </ion-row>
+  </div>
+  <div *ngIf="editMode">
+  <ion-row>
+  <ion-input (keyup)="updateFirstName($event)" placeholder={{user.first_name}} ></ion-input>
+  </ion-row>
+  </div>
+  <div *ngIf="!editMode">
+  <ion-row><ion-col>
+  <ion-label class="header">Last Name : :</ion-label></ion-col>
+    <ion-col><ion-label>{{user.last_name}}</ion-label></ion-col>
+  </ion-row>
+  </div>
+  <div *ngIf="editMode">
+  <ion-row>
+  <ion-input (keyup)="updateLastName($event)" placeholder={{user.last_name}} ></ion-input>
+  </ion-row>
+  </div>
+
+  <ion-row><ion-col>
+    <ion-label class="header">Posts :</ion-label></ion-col>
+      <ion-col><ion-label>{{postCount}}</ion-label></ion-col>
+    </ion-row>
+
+  <p></p>
+ <div *ngFor="let post of posts">
+   <ion-card>
+       <ion-item lines="full">
+         <ion-avatar slot="start">
+           <img src="{{avatar}}">
+         </ion-avatar>
+         <ion-label>
+           <h3>{{user.username}}</h3>
+         </ion-label>
+       </ion-item>
+
+       <ion-item lines="full">
+         <ion-row>
+           <ion-col>
+         <p style="font-size: small; margin-bottom: 0;">{{post['body']}}</p>
+
+         <ion-button fill="clear" font="small" size="medium" style="--padding-start: 0; --border-width: 0;">
+           <ion-icon slot="start" name="pin"></ion-icon>
+           <p>{{post['Latitude']}} and {{post['Longitude']}}</p>
+         </ion-button>
+
+     </ion-col>
+     </ion-row>
+       </ion-item>
+
+         <ion-row>
+           <ion-col center text-center>
+             <ion-button fill="clear" size="small">
+               <ion-icon slot="start" name="thumbs-up-outline" color="medium"></ion-icon>
+               <ion-label>0 Likes</ion-label>
+             </ion-button>
+           </ion-col>
+           <ion-col center text-center>
+             <ion-button fill="clear" size="small">
+               <ion-icon slot="start" name="text"></ion-icon>
+               <ion-label>0 Comments</ion-label>
+             </ion-button>
+           </ion-col>
+         </ion-row>
+     </ion-card>
+</div>
+</ion-content>

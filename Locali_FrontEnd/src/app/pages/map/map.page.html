@@ -1,0 +1,32 @@
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button slot="icon-only" (click)="menuSearch()">
+                <ion-icon name="search-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title align="center">
+            <img height="30" src="../assets/img/locali/locali-light.png">
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="menuGroups()">
+                <ion-icon name="people-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <style>
+    .mapboxgl-popup {
+      max-width: 400px;
+      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
+  </style>
+  <div id="map" style='position: relative;
+  width: 100%;
+  height: 120%;'></div>
+  
+</ion-content>
