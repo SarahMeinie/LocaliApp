@@ -1,5 +1,8 @@
 # Locali
 
+<img src="https://imgur.com/borCmZi.png" width="20" />
+
+
 ![Imgur Image](https://imgur.com/borCmZi.png)
 
 Locali (pronounced “Locally”) is a web-based social network, that is focused
