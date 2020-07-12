@@ -1,6 +1,6 @@
 # Locali
 
-<img align="left" width="150" src="https://imgur.com/borCmZi.png">
+<img align="left" width="110" src="https://imgur.com/borCmZi.png">
 
 
 
