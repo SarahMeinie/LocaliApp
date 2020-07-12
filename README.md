@@ -1,7 +1,7 @@
 # Locali
 
 <img src="https://imgur.com/borCmZi.png" width="200" />
-<img align="left" width="100" src="https://imgur.com/borCmZi.png>
+<img align="left" width="100" src="https://imgur.com/borCmZi.png">
 
 
 
