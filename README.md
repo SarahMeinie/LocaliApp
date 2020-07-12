@@ -1,6 +1,6 @@
 # Locali
 
-<img src="https://imgur.com/borCmZi.png" width="20" />
+<img src="https://imgur.com/borCmZi.png" width="200" />
 
 
 ![Imgur Image](https://imgur.com/borCmZi.png)
